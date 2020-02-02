@@ -1,0 +1,40 @@
+[info]
+- pip3 install -r requirements.txt
+- more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
+- rockyou.txt - popular list passwords.
+- foundhash.py - If you have a hash and want to try to decrypt the password using the database of the most popular passwords.
+!!ATTENTION!!
+- Python script and it's slow.
+- Only pure hash, without salt.
+ 
+Example: ./foundhash.py -m aGVsbG8gd29ybGQ= -a base64
+
+*Support for cryptographic hashing algorithms.
++---------------------------------------
+|* wait from 1 second to -N minutes.
+|   - md2
+|   - md4
+|   - md5
+|   - sha1
+|   - sha224
+|   - sha256
+|   - sha384
+|   - sha512
+|   - ripemd160
+|   - keccak224
+|   - keccak256
+|   - keccak384
+|   - keccak512
+|   - shake128_256
+|   - shake256_512
+|   - sha3-224
+|   - sha3-256
+|   - sha3-384
+|   - sha3-512
++---------------------------------------
+|*instant found hash.
+|   - base32
+|   - base64
+|   - ascii85
++---------------------------------------
+
