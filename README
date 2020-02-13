@@ -13,15 +13,10 @@
  
 [Example]
 ./foundhash.py -m aGVsbG8gd29ybGQ= -a base64
-
-[Argparse]
-./foundhash.py -h
-
--m [HASH]
--a [md2, md4, md5, sha1, sha224, sha256, sha384, sha512, ripemd160,
-	keccka224, keccak256, keccak384, keccak512, shake128-256, shake256-512,
-	sha3-224, sha3-256, sha3-384, sha3-512, base32, base64, ascii85]
-
+-------------------------
+-h [help]
+-m [hash]
+-a [algorithm]
 
 
 *Support for cryptographic hashing algorithms.
@@ -40,8 +35,8 @@
 |   - keccak256
 |   - keccak384
 |   - keccak512
-|   - shake128_256
-|   - shake256_512
+|   - shake128-256
+|   - shake256-512
 |   - sha3-224
 |   - sha3-256
 |   - sha3-384
