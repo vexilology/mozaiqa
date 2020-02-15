@@ -12,7 +12,7 @@
 - 7z x rockyou.7z
  
 [Example]
-./foundhash.py -m aGVsbG8gd29ybGQ= -a base64
+./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
 -------------------------
 -h [help]
 -m [hash]
@@ -42,7 +42,7 @@
 |   - sha3-384
 |   - sha3-512
 +---------------------------------------
-|*instant found hash.
+|* instant found hash.
 |   - base32
 |   - base64
 |   - ascii85
