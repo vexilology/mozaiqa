@@ -7,8 +7,8 @@ class Passwordinfo:
         self.a = s
 
     def finish(self):
-        def complex_password(password):
-            length = len(password)
+        def complex_password(full_words):
+            length = len(full_words)
             complexity = 0
             lower = string.ascii_lowercase
             upper = string.ascii_uppercase
@@ -26,21 +26,21 @@ class Passwordinfo:
             non_print = "".join(chr(n) for n in range(1, 255) if not chr(n) in string.printable)
 
             for index in range(0, length):
-                if password[index] in non_print:
+                if full_words[index] in non_print:
                     return 254 ** x
-                if password[index] in lower:
+                if full_words[index] in lower:
                     has_lower = True
-                if password[index] in upper:
+                if full_words[index] in upper:
                     if index == 0 or index == (length - 1):
                         has_outwards_upper = True
                     else:
                         has_upper = True
-                if password[index] in symbols:
+                if full_words[index] in symbols:
                     if index == 0 or index == (length - 1):
                         has_outwards_sym = True
                     else:
                         has_sym = True
-                if password[index] in nums:
+                if full_words[index] in nums:
                     if index == 0 or index == (length - 1):
                         has_outwards_num = True
                     else:
@@ -70,19 +70,19 @@ class Passwordinfo:
             with open(book) as f:
                 return f.readlines()
 
-        def min_complex_password(password):
-            return len("".join(set(password))) ** len(password)
+        def min_complex_password(full_words):
+            return len("".join(set(full_words))) ** len(full_words)
 
-        def complex_zero(password):
+        def complex_zero(full_words):
             total = 0
-            for x in range(0, len(password)):
-                total += complex_password(password[x:])
+            for x in range(0, len(full_words)):
+                total += complex_password(full_words[x:])
             return total
 
-        def min_zero(password):
+        def min_zero(full_words):
             total = 0
-            for x in range(0, len(password)):
-                total += min_complex_password(password[x:])
+            for x in range(0, len(full_words)):
+                total += min_complex_password(full_words[x:])
             return total
 
         def calc_mozaiqa(value):
