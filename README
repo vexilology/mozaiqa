@@ -1,7 +1,7 @@
 [info]
+- python3.6.9+ version
 - more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
 - rockyou.txt - popular list passwords.
-- foundhash.py - If you have a hash and want to try to decrypt the password using the database of the most popular passwords.
 !ATTENTION!
 - Python script and it's slow.
 - Only pure hash, without salt.
@@ -12,12 +12,14 @@
 - 7z x rockyou.7z
  
 [Example]
+./mozaiqa.py -s helloworld
+-------------------------
 ./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
 -------------------------
 -h [help]
 -m [hash]
 -a [algorithm]
-
+-s [passwordinfo]
 
 *Support for cryptographic hashing algorithms.
 +---------------------------------------
