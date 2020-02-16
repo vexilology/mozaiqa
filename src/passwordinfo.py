@@ -1,5 +1,6 @@
 import math
 import string
+import config
 
 class Passwordinfo:
     def __init__(self, s):
@@ -66,9 +67,15 @@ class Passwordinfo:
                 combinations *= 38
             return combinations
 
-        def load_dict(book="/usr/share/dict/words"):
-            with open(book) as f:
-                return f.readlines()
+        def load_dict(book_path):
+            try:
+                with open(config.book_path) as f:
+                    return f.readlines()
+            except FileNotFoundError as f:
+                print("\033[31m-" * 50)
+                print("Error path: this flag only for linux.")
+                print("-" * 50)
+                quit()
 
         def min_complex_password(full_words):
             return len("".join(set(full_words))) ** len(full_words)
@@ -94,7 +101,7 @@ class Passwordinfo:
 
         while True:
             div = 1
-            words = load_dict()
+            words = load_dict(config)
 
             b = complex_password(self.a) / div
             c = min_complex_password(self.a)

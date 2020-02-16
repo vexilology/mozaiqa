@@ -1,3 +1,4 @@
+import sys
 import hashlib
 import sha3
 import base64
@@ -10,7 +11,7 @@ class FoundHash:
     def __init__(self, myfile, a, m):
         self.myfile = myfile
         self.addhash = m
-        self.myhash = a 
+        self.myhash = a
 
     def md2(self):
         if self.myhash == "md2":
@@ -155,6 +156,10 @@ class FoundHash:
     def keccak_full(self):
         if self.myhash == "keccak224":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.keccak_224(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -170,6 +175,10 @@ class FoundHash:
 
         elif self.myhash == "keccak256":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.keccak_256(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -185,6 +194,10 @@ class FoundHash:
 
         elif self.myhash == "keccak384":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.keccak_384(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -200,6 +213,10 @@ class FoundHash:
 
         elif self.myhash == "keccak512":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.keccak_512(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -216,6 +233,10 @@ class FoundHash:
     def shake_full(self):
         if self.myhash == "shake128-256":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.shake_128(password.strip().encode()).hexdigest(config.OUTPUT32)
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -231,6 +252,10 @@ class FoundHash:
 
         elif self.myhash == "shake256-512":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = sha3.shake_256(password.strip().encode()).hexdigest(config.OUTPUT64)
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -247,6 +272,10 @@ class FoundHash:
     def sha3_full(self):
         if self.myhash == "sha3-224":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = hashlib.sha3_224(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -262,6 +291,10 @@ class FoundHash:
 
         elif self.myhash == "sha3-256":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = hashlib.sha3_256(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -277,6 +310,10 @@ class FoundHash:
 
         elif self.myhash == "sha3-384":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ " \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = hashlib.sha3_384(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -292,6 +329,10 @@ class FoundHash:
 
         elif self.myhash == "sha3-512":
             for password in self.myfile:
+                if sys.version_info < (3, 6, 8):
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
+                            "or later to run this script.\n")
+                    quit()
                 check_pass = hashlib.sha3_512(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -319,7 +360,7 @@ class FoundBinary:
             print("-" * 20)
             print("[!]Password found ---> {}".format(check_pass))
             print("-" * 20)
-            quti()
+            quit()
 
         elif self.myhash == "base64":
             check_pass = base64.b64decode(self.addhash.encode())
