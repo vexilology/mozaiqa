@@ -12,10 +12,14 @@ def main():
         print("-" * 50)
         quit()
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-m", type=str, help="hash")
-    parser.add_argument("-a", type=str, help="algorithm")
-    parser.add_argument("-s", type=str, help="passwordinfo")
+    parser = argparse.ArgumentParser(description="[*]Mozaiqa script")
+    parser.add_argument("-m", type=str, help="Add Hash.")
+    parser.add_argument("-a", type=str, help="md2, md4, md5,\
+            sha1, sha224, sha256, sha384, sha512, ripemd160,\
+            keccak224, keccak256, keccak384, keccak512,\
+            shake128-256, shake256-512,\
+            sha3-224, sha3-256, sha3-384, sha3-512.")
+    parser.add_argument("-s", type=str, help="Checking the capabilities of bruteforce.")
     args = parser.parse_args()
 
     finalH = FoundHash(myfile, args.a, args.m)
