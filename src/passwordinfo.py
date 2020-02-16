@@ -1,6 +1,5 @@
 import math
 import string
-import config
 
 class Passwordinfo:
     def __init__(self, s):
@@ -23,7 +22,8 @@ class Passwordinfo:
 
             symbols = "".join(c for c in string.printable if not c in lower \
                     and not c in upper and not c in nums)
-            non_print = "".join(chr(n) for n in range(1, 255) if not chr(n) in string.printable)
+            non_print = "".join(chr(n) for n in range(1, 255) \
+                    if not chr(n) in string.printable)
 
             for index in range(0, length):
                 if full_words[index] in non_print:
@@ -96,29 +96,19 @@ class Passwordinfo:
             div = 1
             words = load_dict()
 
-            for x in words:
-                x = x.rstrip("\r\n")
-                if len(x) > config.minstring and self.a.find(x) != -1:
-                    div *= complex_password(x) / len(words)
-                    print("{} sounds like a dictioanry word," \
-                            "dividing your result by {}.".format(x, div))
-                    print("{} is calculated by {} own mozaiqa {} multiplied" \
-                            "by any previous found words divided" \
-                            "by the length of the dictionary {}.".format(div, x, complex_password(x), len(words)))
+            b = complex_password(self.a) / div
+            c = min_complex_password(self.a)
+            d = complex_zero(self.a) / div
+            e = min_zero(self.a)
+            f = math.log(complex_password(self.a) / div, 2)
 
-                b = complex_password(self.a)/div
-                c = min_complex_password(self.a)
-                d = complex_zero(self.a)/div
-                e = min_zero(self.a)
-                f = math.log(complex_password(self.a)/div, 2)
-
-                print("{} would approximately take {} tries to bruteforce knowing" \
-                        "the exact length.".format(self.a, b))
-                print("{} would approximately take {} tries to bruteforce by knowing" \
-                        "the exact character set and length.".format(self.a, c))
-                print("{} would approximately take {} tries to bruteforce without knowing" \
-                        "the exact length or character set.".format(self.a, d))
-                print("{} would approximately take {} tries to bruteforce by knowing" \
-                        "the character set but not the length.".format(self.a, e))
-                print("{} has ~{} bits of mozaiqa.".format(self.a, f))
-                quit()
+            print("{} -> would approximately take {} tries to bruteforce knowing" \
+                    "the exact length.".format(self.a, b))
+            print("{} -> would approximately take {} tries to bruteforce by knowing" \
+                    "the exact character set and length.".format(self.a, c))
+            print("{} -> would approximately take {} tries to bruteforce without knowing" \
+                    "the exact length or character set.".format(self.a, d))
+            print("{} -> would approximately take {} tries to bruteforce by knowing" \
+                    "the character set but not the length.".format(self.a, e))
+            print("{} -> has ~{} bits of mozaiqa.".format(self.a, f))
+            quit()
