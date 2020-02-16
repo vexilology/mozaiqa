@@ -1,4 +1,5 @@
 [info]
+- python3.5.2 have error with sha3 lib
 - python3.6.9+ version
 - more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
 - rockyou.txt - popular list passwords.
