@@ -140,7 +140,8 @@ class FoundHash:
     def ripemd160(self):
         if self.myhash == "ripemd160":
             for password in self.myfile:
-                check_pass = hashlib.new('ripemd160', (password.strip().encode())).hexdigest()
+                check_pass = hashlib.new('ripemd160',
+                        (password.strip().encode())).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
                     print("-" * 20)
@@ -157,8 +158,8 @@ class FoundHash:
         if self.myhash == "keccak224":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.keccak_224(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -176,8 +177,8 @@ class FoundHash:
         elif self.myhash == "keccak256":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.keccak_256(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -195,8 +196,8 @@ class FoundHash:
         elif self.myhash == "keccak384":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.keccak_384(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -214,8 +215,8 @@ class FoundHash:
         elif self.myhash == "keccak512":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.keccak_512(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -234,8 +235,8 @@ class FoundHash:
         if self.myhash == "shake128-256":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.shake_128(password.strip().encode()).hexdigest(config.OUTPUT32)
                 print("Password ---> {}".format(password.strip()))
@@ -253,8 +254,8 @@ class FoundHash:
         elif self.myhash == "shake256-512":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = sha3.shake_256(password.strip().encode()).hexdigest(config.OUTPUT64)
                 print("Password ---> {}".format(password.strip()))
@@ -273,8 +274,8 @@ class FoundHash:
         if self.myhash == "sha3-224":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = hashlib.sha3_224(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -292,8 +293,8 @@ class FoundHash:
         elif self.myhash == "sha3-256":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = hashlib.sha3_256(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -311,8 +312,8 @@ class FoundHash:
         elif self.myhash == "sha3-384":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+ " \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = hashlib.sha3_384(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
@@ -330,8 +331,8 @@ class FoundHash:
         elif self.myhash == "sha3-512":
             for password in self.myfile:
                 if sys.version_info < (3, 6, 8):
-                    sys.stderr.write("\033[31m[!]You need python3.6.9+" \
-                            "or later to run this script.\n")
+                    sys.stderr.write("\033[31m[!]You need python3.6.9+ \
+or later to run this script.\n")
                     quit()
                 check_pass = hashlib.sha3_512(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
