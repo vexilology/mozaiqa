@@ -6,12 +6,17 @@
 - Python script and it's slow.
 - Only pure hash, without salt.
 
-[install Linux]
-- pip3 install -r requirements.txt
+[install Ubuntu]
+- sudo apt-get install git
 - sudo apt-get install p7zip-full
+- git clone https://github.com/vexilology/mozaiqa
+- cd mozaiqa
+- pip3 install -r requirements.txt
 - 7z x rockyou.7z
  
 [Example]
+./mozaiqa.py -h
+-------------------------
 ./mozaiqa.py -s helloworld
 -------------------------
 ./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64

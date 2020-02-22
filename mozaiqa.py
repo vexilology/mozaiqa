@@ -6,7 +6,7 @@ from src.passwordinfo import Passwordinfo
 def main():
     try:
         myfile = open("rockyou.txt", "r", encoding="utf-8", errors="ignore")
-    except:
+    except FileNotFoundError:
         print("\033[31m-" * 50)
         print("Error: txt file not found, check folder.")
         print("-" * 50)
@@ -22,21 +22,27 @@ def main():
     parser.add_argument("-s", type=str, help="Checking the capabilities of bruteforce.")
     args = parser.parse_args()
 
-    finalH = FoundHash(myfile, args.a, args.m)
-    finalB = FoundBinary(myfile, args.a, args.m)
-    finalS = Passwordinfo(args.s)
+    try:
+        finalH = FoundHash(myfile, args.a, args.m)
+        finalB = FoundBinary(myfile, args.a, args.m)
+        finalS = Passwordinfo(args.s)
 
-    finalH.md2()
-    finalH.md4()
-    finalH.md5()
-    finalH.sha_full()
-    finalH.ripemd160()
-    finalH.sha3_full()
-    finalH.keccak_full()
-    finalH.shake_full()
-    finalB.base32_64()
-    finalB.ascii85()
-    finalS.finish()
+        finalH.md2()
+        finalH.md4()
+        finalH.md5()
+        finalH.sha_full()
+        finalH.ripemd160()
+        finalH.sha3_full()
+        finalH.keccak_full()
+        finalH.shake_full()
+        finalB.base32_64()
+        finalB.ascii85()
+        finalS.finish()
+    except KeyboardInterrupt:
+        print("\033[32m-" * 50)
+        print("Program stopped with Ctrl+C.")
+        print("-" * 50)
+        quit()
 
 if __name__ == "__main__":
     main()
