@@ -72,7 +72,7 @@ class Passwordinfo:
                 with open(config.book_path) as f:
                     return f.readlines()
             except FileNotFoundError as f:
-                print("\033[31m-" * 50)
+                print(config.red, "-" * 50)
                 print("Error path: this flag only for linux.")
                 print("-" * 50)
                 quit()

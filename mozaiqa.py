@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import config
 from src.algorithms import FoundHash, FoundBinary
 from src.passwordinfo import Passwordinfo
 
@@ -7,7 +8,7 @@ def main():
     try:
         myfile = open("rockyou.txt", "r", encoding="utf-8", errors="ignore")
     except FileNotFoundError:
-        print("\033[31m-" * 50)
+        print(config.red, "-" * 50)
         print("Error: txt file not found, check folder.")
         print("-" * 50)
         quit()
@@ -39,7 +40,7 @@ def main():
         finalB.ascii85()
         finalS.finish()
     except KeyboardInterrupt:
-        print("\033[32m-" * 50)
+        print(config.green, "-" * 50)
         print("Program stopped with Ctrl+C.")
         print("-" * 50)
         quit()
