@@ -28,7 +28,7 @@
 
 *Support for cryptographic hashing algorithms.
 +---------------------------------------
-|* wait from 1 second to -N minutes.
+|* from ~1sec to the end of the whole list.
 |   - md2
 |   - md4
 |   - md5
@@ -48,8 +48,8 @@
 |   - sha3-256
 |   - sha3-384
 |   - sha3-512
-|	- blake2s-256
-|	- blake2b-512
+|   - blake2s-256
+|   - blake2b-512
 +---------------------------------------
 |* instant found hash.
 |   - base32
