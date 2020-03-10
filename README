@@ -12,7 +12,6 @@
 - sudo apt install p7zip-full
 - git clone https://github.com/vexilology/mozaiqa
 - cd mozaiqa
-- pip3 install -r requirements.txt
 - 7z x rockyou.7z
 
  
@@ -29,16 +28,9 @@
 -s [passwordinfo]
 
 
-[ERRORS]
-If you have python3.6+ there is a chance of error bellow.
---> AttributeError: module '_sha3' has no attribute 'sha3'
-FIX: -> cd src -> open algorithms.py -> change 3 line " import sha3" -> "import _sha3"
-
-
 *Support for cryptographic hashing algorithms.
 +---------------------------------------
 |* from ~1sec to the end of the whole list.
-|   - md2
 |   - md4
 |   - md5
 |   - sha1
@@ -47,16 +39,6 @@ FIX: -> cd src -> open algorithms.py -> change 3 line " import sha3" -> "import 
 |   - sha384
 |   - sha512
 |   - ripemd160
-|   - keccak224
-|   - keccak256
-|   - keccak384
-|   - keccak512
-|   - shake128-256
-|   - shake256-512
-|   - sha3-224
-|   - sha3-256
-|   - sha3-384
-|   - sha3-512
 |   - blake2s-256
 |   - blake2b-512
 +---------------------------------------
