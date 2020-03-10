@@ -1,4 +1,4 @@
-[info]
+[Info]
 - python3.6.9+ version
 - more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
 - rockyou.txt - popular list passwords.
@@ -6,13 +6,15 @@
 - Python script and it's slow.
 - Only pure hash, without salt.
 
-[install Ubuntu]
+
+[Install Ubuntu]
 - sudo apt install git
 - sudo apt install p7zip-full
 - git clone https://github.com/vexilology/mozaiqa
 - cd mozaiqa
 - pip3 install -r requirements.txt
 - 7z x rockyou.7z
+
  
 [Example]
 ./mozaiqa.py -h
@@ -25,6 +27,13 @@
 -m [hash]
 -a [algorithm]
 -s [passwordinfo]
+
+
+[ERRORS]
+If you have python3.6+ there is a chance of error bellow.
+--> AttributeError: module '_sha3' has no attribute 'sha3'
+FIX: -> cd src -> open algorithms.py -> change 3 line " import sha3" -> "import _sha3"
+
 
 *Support for cryptographic hashing algorithms.
 +---------------------------------------
@@ -56,4 +65,3 @@
 |   - base64
 |   - ascii85
 +---------------------------------------
-
