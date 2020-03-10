@@ -19,7 +19,8 @@ def main():
             sha1, sha224, sha256, sha384, sha512, ripemd160,\
             keccak224, keccak256, keccak384, keccak512,\
             shake128-256, shake256-512,\
-            sha3-224, sha3-256, sha3-384, sha3-512.")
+            sha3-224, sha3-256, sha3-384, sha3-512,\
+            blake2s-256, blake2b-512")
     parser.add_argument("-s", type=str, help="Checking the capabilities of bruteforce.")
     args = parser.parse_args()
 
@@ -36,6 +37,7 @@ def main():
         finalH.sha3_full()
         finalH.keccak_full()
         finalH.shake_full()
+        finalH.blake2()
         finalB.base32_64()
         finalB.ascii85()
         finalS.finish()

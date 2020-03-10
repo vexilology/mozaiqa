@@ -3,6 +3,7 @@ import hashlib
 import sha3
 import base64
 import config
+from hashlib import blake2s, blake2b
 from Crypto.Hash import MD2
 
 class FoundHash:
@@ -345,6 +346,37 @@ or later to run this script.\n")
 or later to run this script.\n")
                     quit()
                 check_pass = hashlib.sha3_512(password.strip().encode()).hexdigest()
+                print("Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-" * 20)
+                    print("\n[!]Password found ---> {}".format(password))
+                    print("-" * 20)
+                    quit()
+            else:
+                print("-" * 20)
+                print("[!]Hash not found ---x {}".format(self.addhash))
+                print("-" * 20)
+                quit()
+
+    def blake2(self):
+        if self.myhash == "blake2s-256":
+            for password in self.myfile:
+                check_pass = blake2s(password.strip().encode()).hexdigest()
+                print("Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-" * 20)
+                    print("\n[!]Password found ---> {}".format(password))
+                    print("-" * 20)
+                    quit()
+            else:
+                print("-" * 20)
+                print("[!]Hash not found ---x {}".format(self.addhash))
+                print("-" * 20)
+                quit()
+
+        elif self.myhash == "blake2b-512":
+            for password in self.myfile:
+                check_pass = blake2b(password.strip().encode()).hexdigest()
                 print("Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
                     print("-" * 20)
