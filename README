@@ -1,13 +1,12 @@
-							[Mozaiqa script]
-- python3.6.9+ version
-- more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
-- rockyou.txt - popular list passwords.
-!ATTENTION!
-- Python script and it's slow.
-- Only pure hash, without salt.
+[Mozaiqa script]
+- Created and tested on python3.6+
+- More info ---> https://github.com/danielmiessler/SecLists/tree/master/Passwords
+- Rockyou.txt - popular list passwords
+- Python script and it's slow
+- Only pure hash, without salt
 
 
-							[Install Ubuntu]
+[Install Ubuntu]
 - sudo apt install git
 - sudo apt install p7zip-full
 - git clone https://github.com/vexilology/mozaiqa
@@ -15,14 +14,14 @@
 - 7z x rockyou.7z
 
  
-							[Examples and other]
-./mozaiqa.py -h
+[Examples and other]
+- ./mozaiqa.py -h
 -------------------------
-./mozaiqa.py -s helloworld
+- ./mozaiqa.py -s helloworld
 -------------------------
-./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
+- ./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
 -------------------------
-./mozaiqa.py -f archive.zip
+- ./mozaiqa.py -f archive.zip
 -------------------------
 -h [help]
 -m [hash]
@@ -31,9 +30,9 @@
 -f [archive name]
 
 
-*Support for cryptographic hashing algorithms.
+*Supported algorithms
 +---------------------------------------
-|* from ~1sec to the end of the whole list.
+|* from ~1sec to the end of the whole list
 |   - md4
 |   - md5
 |   - sha1
@@ -45,7 +44,7 @@
 |   - blake2s-256
 |   - blake2b-512
 +---------------------------------------
-|* instant found hash.
+|* instant found
 |   - base32
 |   - base64
 |   - ascii85
