@@ -1,6 +1,5 @@
-import hashlib
 import base64
-import config
+import hashlib
 from hashlib import blake2s, blake2b
 
 class FoundHash:
@@ -12,7 +11,8 @@ class FoundHash:
     def md4(self):
         if self.myhash == "md4":
             for password in self.myfile:
-                check_pass = hashlib.new('md4', (password.strip().encode())).hexdigest()
+                check_pass = hashlib.new('md4', (
+                    password.strip().encode())).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
                     print("-" * 20)
@@ -51,7 +51,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
         elif self.myhash == "sha224":
@@ -65,7 +65,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
         elif self.myhash == "sha256":
@@ -79,7 +79,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
         elif self.myhash == "sha384":
@@ -93,7 +93,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
         elif self.myhash == "sha512":
@@ -107,7 +107,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
     def ripemd160(self):
@@ -123,7 +123,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
     def blake2(self):
@@ -138,7 +138,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
         elif self.myhash == "blake2b-512":
@@ -152,7 +152,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x] Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---> {}".format(self.addhash))
                 print("-" * 20)
 
 class FoundBinary:
