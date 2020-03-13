@@ -1,4 +1,4 @@
-[Info]
+							[Mozaiqa script]
 - python3.6.9+ version
 - more info and other wordlists --> https://github.com/danielmiessler/SecLists/tree/master/Passwords
 - rockyou.txt - popular list passwords.
@@ -7,7 +7,7 @@
 - Only pure hash, without salt.
 
 
-[Install Ubuntu]
+							[Install Ubuntu]
 - sudo apt install git
 - sudo apt install p7zip-full
 - git clone https://github.com/vexilology/mozaiqa
@@ -15,17 +15,20 @@
 - 7z x rockyou.7z
 
  
-[Example]
+							[Examples and other]
 ./mozaiqa.py -h
 -------------------------
 ./mozaiqa.py -s helloworld
 -------------------------
 ./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
 -------------------------
+./mozaiqa.py -f archive.zip
+-------------------------
 -h [help]
 -m [hash]
 -a [algorithm]
 -s [passwordinfo]
+-f [archive name]
 
 
 *Support for cryptographic hashing algorithms.
