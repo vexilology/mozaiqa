@@ -1,4 +1,3 @@
-import sys
 import hashlib
 import base64
 import config
@@ -108,7 +107,7 @@ class FoundHash:
                     break
             else:
                 print("-" * 20)
-                print("[x]Hash not found ---x {}".format(self.addhash))
+                print("[x] Hash not found ---x {}".format(self.addhash))
                 print("-" * 20)
 
     def ripemd160(self):
