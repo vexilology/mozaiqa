@@ -27,7 +27,7 @@
 -m [hash]
 -a [algorithm]
 -s [passwordinfo]
--f [archive name]
+-f [zip-archive name]
 
 
 *Supported algorithms

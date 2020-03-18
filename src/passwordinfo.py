@@ -21,8 +21,9 @@ class Passwordinfo:
             has_outwards_num = False
             has_outwards_upper = False
 
-            symbols = "".join(c for c in string.printable if not c in lower
-                    and not c in upper and not c in nums)
+            symbols = "".join(c for c in string.printable if
+                    not c in lower and not c in upper
+                    and not c in nums)
             non_print = "".join(chr(n) for n in range(1, 255)
                     if not chr(n) in string.printable)
 
@@ -109,13 +110,16 @@ class Passwordinfo:
             e = min_zero(self.a)
             f = math.log(complex_password(self.a) / div, 2)
 
-            print("{} -> would approximately take {} tries to bruteforce knowing\
-the exact length.".format(self.a, b))
-            print("{} -> would approximately take {} tries to bruteforce by knowing\
-the exact character set and length.".format(self.a, c))
-            print("{} -> would approximately take {} tries to bruteforce without knowing\
-the exact length or character set.".format(self.a, d))
-            print("{} -> would approximately take {} tries to bruteforce by knowing\
-the character set but not the length.".format(self.a, e))
-            print("{} -> has ~{} bits of mozaiqa.".format(self.a, f))
+            print("'{}' would approximately take {} tries to \
+bruteforce knowing the exact length.".format(self.a, b))
+            print("'{}' would approximately take {} tries to \
+bruteforce by knowing the exact character set \
+and length.".format(self.a, c))
+            print("'{}' would approximately take {} tries to \
+bruteforce without knowing the exact length \
+or character set.".format(self.a, d))
+            print("'{}' would approximately take {} tries to \
+bruteforce by knowing the character set but \
+not the length.".format(self.a, e))
+            print("'{}' has ~{} bits of mozaiqa.".format(self.a, f))
             quit()
