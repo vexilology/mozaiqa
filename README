@@ -1,14 +1,16 @@
 [Mozaiqa script]
 - Created and tested on python3.6+
+  ================================
 - More info ---> https://github.com/danielmiessler/SecLists/tree/master/Passwords
 - Rockyou.txt - popular list passwords
 - Python script and it's slow
+  ===========================
 - Only pure hash, without salt
+  ============================
 
 
 [Install Ubuntu]
-- sudo apt install git
-- sudo apt install p7zip-full
+- sudo apt install git p7zip-full
 - git clone https://github.com/vexilology/mozaiqa
 - cd mozaiqa
 - 7z x rockyou.7z

@@ -22,7 +22,8 @@ def main():
     parser.add_argument("-m", help="add hash.")
     parser.add_argument("-a", help="md2, md4, md5,\
             sha1, sha224, sha256, sha384, sha512, ripemd160,\
-            blake2s-256, blake2b-512")
+            blake2s-256, blake2b-512, \
+            base32, base64, ascii85.")
     parser.add_argument("-s", help="checking the \
             capabilities of bruteforce.")
     parser.add_argument("-f", help="add zip archive name.")
