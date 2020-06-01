@@ -1,4 +1,6 @@
-[Mozaiqa script]
+[Mozaiqa]
+- Script in process. Only draft
+  =============================
 - Created and tested on python3.6+
   ================================
 - More info ---> https://github.com/danielmiessler/SecLists/tree/master/Passwords
@@ -25,11 +27,14 @@
 -------------------------
 - ./mozaiqa.py -f archive.zip
 -------------------------
+- ./mozaiqa.py -i 6adfb183a4a2c94a2f92dab5ade762a47889a5a1
+-------------------------
 -h [help]
 -m [hash]
 -a [algorithm]
 -s [passwordinfo]
 -f [zip-archive name]
+-i [quick search by hash size]
 
 
 *Supported algorithms

@@ -2,6 +2,7 @@
 import config
 import argparse
 from src.archive import RipArchive
+from src.identifier import Identifier
 from src.passwordinfo import Passwordinfo
 from src.algorithms import FoundHash, FoundBinary
 
@@ -27,6 +28,7 @@ def main():
     parser.add_argument("-s", help="checking the \
             capabilities of bruteforce.")
     parser.add_argument("-f", help="add zip archive name.")
+    parser.add_argument("-i", help="quick search by hash size.")
     args = parser.parse_args()
     if args is False:
         SystemExit
@@ -48,6 +50,11 @@ def main():
         elif args.s:
             finalS = Passwordinfo(args.s)
             finalS.finish()
+        elif args.i:
+            finalI = Identifier(args.i)
+            finalI.timetofound()
+        else:
+            print("Use flags. For more info ./mozaiqa.py -h")
     except KeyboardInterrupt:
         print(config.green, "-" * 50)
         print("Program stopped with Ctrl+C.")
