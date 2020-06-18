@@ -16,7 +16,7 @@ def main():
         print("-" * 50)
         quit()
 
-    parser = argparse.ArgumentParser(description="name: mozaiqa script",
+    parser = argparse.ArgumentParser(description="*** mozaiqa script ***",
             add_help=False, usage="./mozaiqa.py [-m] [-a] [-s] [-f]")
     parser.add_argument("-h", "--help", action="help",
             help="show this help message.")
@@ -36,14 +36,13 @@ def main():
     try:
         if args.m and args.a:
             finalH = FoundHash(myfile, args.a, args.m)
-            finalB = FoundBinary(myfile, args.a, args.m)
             finalH.md4()
             finalH.md5()
             finalH.sha_full()
             finalH.ripemd160()
             finalH.blake2()
+            finalB = FoundBinary(myfile, args.a, args.m)
             finalB.base32_64()
-            finalB.ascii85()
         elif args.f:
             finalF = RipArchive(myfile, args.f)
             finalF.checkzip()

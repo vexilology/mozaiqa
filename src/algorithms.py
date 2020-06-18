@@ -1,4 +1,5 @@
 import base64
+import config
 import hashlib
 from hashlib import blake2s, blake2b
 
@@ -11,7 +12,7 @@ class FoundHash:
     def md4(self):
         if self.myhash == "md4":
             for password in self.myfile:
-                check_pass = hashlib.new('md4', (
+                check_pass = hashlib.new("md4", (
                     password.strip().encode())).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -19,6 +20,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -34,6 +37,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -49,6 +54,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -63,6 +70,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -77,6 +86,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -91,6 +102,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -105,6 +118,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -113,7 +128,7 @@ class FoundHash:
     def ripemd160(self):
         if self.myhash == "ripemd160":
             for password in self.myfile:
-                check_pass = hashlib.new('ripemd160',
+                check_pass = hashlib.new("ripemd160",
                         (password.strip().encode())).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
@@ -121,6 +136,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -136,6 +153,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -150,6 +169,8 @@ class FoundHash:
                     print("\n[!] Password found ---> {}".format(password))
                     print("-" * 20)
                     break
+                else:
+                    continue
             else:
                 print("-" * 20)
                 print("[x] Hash not found ---> {}".format(self.addhash))
@@ -174,9 +195,11 @@ class FoundBinary:
             print("[!] Password found ---> {}".format(check_pass))
             print("-" * 20)
 
-    def ascii85(self):
-        if self.myhash == "ascii85":
+        elif self.myhash == "ascii85":
             check_pass = base64.a85decode(self.addhash.encode())
             print("-" * 20)
             print("[!] Password found ---> {}".format(check_pass))
             print("-" * 20)
+
+        else:
+            pass
