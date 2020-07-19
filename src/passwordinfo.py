@@ -76,7 +76,7 @@ class Passwordinfo:
                 print(config.red, "-" * 50)
                 print("Error path: this flag only for linux.")
                 print("-" * 50)
-                quit()
+                exit(0)
 
         def min_complex_password(full_words):
             return len("".join(set(full_words))) ** len(full_words)
@@ -122,4 +122,4 @@ or character set.".format(self.a, d))
 bruteforce by knowing the character set but \
 not the length.".format(self.a, e))
             print("'{}' has ~{} bits of mozaiqa.".format(self.a, f))
-            quit()
+            exit(0)

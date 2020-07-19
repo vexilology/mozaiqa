@@ -56,13 +56,13 @@ class Identifier:
         t_hash = "6665ec809bc89daf21ec9e77ebac6b817e49673cf7db2bbede072564f84b46d9"
         if len(hash) == len(t_hash) and hash.isalpha(
             ) == False and hash.isalnum() == True:
-            alg_name.append("11")
+            alg_name.append("112055")
 
     def blake2b512(hash, alg_name):
         t_hash = "91850ff29412930625ef0723731914104fc9b3b84b62c5e42f43390d8c09fef3618b42f03dfb2e9b9f08b32a5037b00f4c2728bdfa5bb737de56fadc2cbba4be"
         if len(hash) == len(t_hash) and hash.isalpha(
             ) == False and hash.isalnum() == True:
-            alg_name.append("12")
+            alg_name.append("112056")
 
     def timetofound(self):
         alg_name = []
@@ -76,7 +76,7 @@ class Identifier:
 
         if len(alg_name) == 0:
             print("[x] Not found.")
-            quit()
+            exit(0)
         elif len(alg_name) > 2:
             alg_name.sort()
             print("~" * 50)

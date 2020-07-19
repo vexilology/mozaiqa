@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 import config
 import argparse
+
 from src.archive import RipArchive
+from src.foundhash import FoundHash
 from src.identifier import Identifier
+from src.foundbinary import FoundBinary
 from src.passwordinfo import Passwordinfo
-from src.algorithms import FoundHash, FoundBinary
 
 def main():
     try:
