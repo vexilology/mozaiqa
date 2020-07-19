@@ -14,7 +14,7 @@ def main():
         print(config.red, "-" * 50)
         print("Error: txt file not found, check folder.")
         print("-" * 50)
-        quit()
+        exit(1)
 
     parser = argparse.ArgumentParser(description="*** mozaiqa script ***",
             add_help=False, usage="./mozaiqa.py [-m] [-a] [-s] [-f]")
