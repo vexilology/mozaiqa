@@ -57,6 +57,5 @@
 - Ascii error:
   If you have   `-bash: syntax error ...`   with  `ascii85`  use: " "
                 =========================         =========       ===
-
   Example: ./mozaiqa.py -m "H=UH)Dg#PS0etNb" -a ascii85
   -----------------------------------------------------

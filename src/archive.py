@@ -17,7 +17,3 @@ class RipArchive:
                     break
             except:
                 print("[x] Access denied ---> {}".format(check_pd))
-        else:
-            print("-" * 20)
-            print("[?] Password not found!")
-            print("-" * 20)
