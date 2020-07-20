@@ -1,4 +1,4 @@
-import zipfile
+from zipfile import ZipFile
 
 class RipArchive:
     def __init__(self, myfile, f):
@@ -7,13 +7,14 @@ class RipArchive:
 
     def checkzip(self):
         for password in self.myfile.readlines():
-            check_pd = password.strip().encode()
+            check_pd_encode = password.strip().encode("utf-8")
+            check_pd_decode = check_pd_encode.decode("utf-8")
             try:
-                with zipfile.ZipFile(self.myarchive) as myzip:
-                    myzip.extractall(pwd=check_pd)
+                with ZipFile(self.myarchive) as myzip:
+                    myzip.extractall(pwd=check_pd_encode)
                     print("-" * 20)
-                    print("[!] Password found! ---> {}".format(check_pd))
+                    print("[!] Password found! ---> {}".format(check_pd_decode))
                     print("-" * 20)
                     break
             except:
-                print("[x] Access denied ---> {}".format(check_pd))
+                print("[x] Access denied ---> {}".format(check_pd_decode))
