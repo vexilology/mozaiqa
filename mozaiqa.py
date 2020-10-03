@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import config
 import argparse
-
 from src.archive import RipArchive
 from src.foundhash import FoundHash
 from src.identifier import Identifier
 from src.foundbinary import FoundBinary
 from src.passwordinfo import Passwordinfo
+
 
 def main():
     try:
@@ -18,7 +18,8 @@ def main():
         print("-" * 50)
         exit(1)
 
-    parser = argparse.ArgumentParser(description="*** mozaiqa script ***",
+    # TODO: Fix figler
+    parser = argparse.ArgumentParser(description=config.title,
             add_help=False, usage="./mozaiqa.py [-m] [-a] [-s] [-f]")
     parser.add_argument("-h", "--help", action="help",
             help="show this help message.")
@@ -32,8 +33,6 @@ def main():
     parser.add_argument("-f", help="add zip archive name.")
     parser.add_argument("-i", help="quick search by hash size.")
     args = parser.parse_args()
-    if args is False:
-        SystemExit
 
     try:
         if args.m and args.a:
