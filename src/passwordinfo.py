@@ -73,9 +73,9 @@ class Passwordinfo:
                 with open(config.book_path) as f:
                     return f.readlines()
             except FileNotFoundError as f:
-                print(config.red, "-" * 50)
+                print(config.red, "-"*50)
                 print("Error path: this flag only for linux.")
-                print("-" * 50)
+                print("-"*50)
                 exit(0)
 
         def min_complex_password(full_words):
@@ -103,23 +103,19 @@ class Passwordinfo:
         while True:
             div = 1
             words = load_dict(config)
-
-            b = complex_password(self.a) / div
+            b = complex_password(self.a)/div
             c = min_complex_password(self.a)
-            d = complex_zero(self.a) / div
+            d = complex_zero(self.a)/div
             e = min_zero(self.a)
-            f = math.log(complex_password(self.a) / div, 2)
+            f = math.log(complex_password(self.a)/div, 2)
 
-            print("'{}' would approximately take {} tries to \
-bruteforce knowing the exact length.".format(self.a, b))
-            print("'{}' would approximately take {} tries to \
-bruteforce by knowing the exact character set \
-and length.".format(self.a, c))
-            print("'{}' would approximately take {} tries to \
-bruteforce without knowing the exact length \
-or character set.".format(self.a, d))
-            print("'{}' would approximately take {} tries to \
-bruteforce by knowing the character set but \
-not the length.".format(self.a, e))
+            print("'{}' would approximately take {} tries to"\
+                "bruteforce knowing the exact length.".format(self.a, b))
+            print("'{}' would approximately take {} tries to bruteforce by"\
+                "knowing the exact character set and length.".format(self.a, c))
+            print("'{}' would approximately take {} tries to bruteforce without"\
+                "knowing the exact length or character set.".format(self.a, d))
+            print("'{}' would approximately take {} tries to bruteforce by"\
+                "knowing the character set but not the length.".format(self.a, e))
             print("'{}' has ~{} bits of mozaiqa.".format(self.a, f))
             exit(0)

@@ -11,22 +11,25 @@ class FoundBinary:
             e_bytes = self.addhash.encode("utf-8")
             d_bytes = base64.b32decode(e_bytes)
             check_pass = d_bytes.decode("utf-8")
-            print("-" * 20)
+            print("-"*20)
             print("[!] Password found ---> {}".format(check_pass))
-            print("-" * 20)
+            print("-"*20)
 
         elif self.myhash == "base64":
             e_bytes = self.addhash.encode("utf-8")
             d_bytes = base64.b64decode(e_bytes)
             check_pass = d_bytes.decode("utf-8")
-            print("-" * 20)
+            print("-"*20)
             print("[!] Password found ---> {}".format(check_pass))
-            print("-" * 20)
+            print("-"*20)
 
         elif self.myhash == "ascii85":
             e_bytes = self.addhash.encode("utf-8")
             d_bytes = base64.a85decode(e_bytes)
             check_pass = d_bytes.decode("utf-8")
-            print("-" * 20)
+            print("-"*20)
             print("[!] Password found ---> {}".format(check_pass))
-            print("-" * 20)
+            print("-"*20)
+        else:
+            print("Unknow Error, check the hash is correct.")
+            exit(1)

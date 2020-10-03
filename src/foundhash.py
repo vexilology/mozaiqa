@@ -15,9 +15,9 @@ class FoundHash:
                     password.strip().encode())).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -29,9 +29,9 @@ class FoundHash:
                 check_pass = hashlib.md5(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -43,9 +43,9 @@ class FoundHash:
                 check_pass = hashlib.sha1(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -56,9 +56,9 @@ class FoundHash:
                 check_pass = hashlib.sha224(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -69,9 +69,9 @@ class FoundHash:
                 check_pass = hashlib.sha256(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -82,9 +82,9 @@ class FoundHash:
                 check_pass = hashlib.sha384(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -95,9 +95,9 @@ class FoundHash:
                 check_pass = hashlib.sha512(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -110,9 +110,9 @@ class FoundHash:
                         (password.strip().encode())).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -124,9 +124,9 @@ class FoundHash:
                 check_pass = blake2s(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue
@@ -137,9 +137,9 @@ class FoundHash:
                 check_pass = blake2b(password.strip().encode()).hexdigest()
                 print("[?] Password ---> {}".format(password.strip()))
                 if check_pass == self.addhash:
-                    print("-" * 20)
+                    print("-"*20)
                     print("\n[!] Password found ---> {}".format(password))
-                    print("-" * 20)
+                    print("-"*20)
                     exit(0)
                 else:
                     continue

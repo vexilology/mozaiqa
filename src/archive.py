@@ -12,9 +12,9 @@ class RipArchive:
             try:
                 with ZipFile(self.myarchive) as myzip:
                     myzip.extractall(pwd=check_pd_encode)
-                    print("-" * 20)
+                    print("-"*20)
                     print("[!] Password found! ---> {}".format(check_pd_decode))
-                    print("-" * 20)
+                    print("-"*20)
                     break
             except:
                 print("[x] Access denied ---> {}".format(check_pd_decode))

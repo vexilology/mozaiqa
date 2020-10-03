@@ -11,14 +11,13 @@ from src.passwordinfo import Passwordinfo
 def main():
     try:
         myfile = open("rockyou.txt", "r",
-                encoding="utf-8", errors="ignore")
+            encoding="utf-8", errors="ignore")
     except FileNotFoundError:
-        print(config.red, "-" * 50)
+        print(config.red, "-"*50)
         print("Error: txt file not found, check folder.")
-        print("-" * 50)
+        print("-"*50)
         exit(1)
 
-    # TODO: Fix figler
     parser = argparse.ArgumentParser(description=config.title,
             add_help=False, usage="./mozaiqa.py [-m] [-a] [-s] [-f]")
     parser.add_argument("-h", "--help", action="help",
@@ -56,9 +55,9 @@ def main():
         else:
             print("Use flags. For more info ./mozaiqa.py -h")
     except KeyboardInterrupt:
-        print(config.green, "-" * 50)
+        print(config.green, "-"*50)
         print("Program stopped with Ctrl+C.")
-        print("-" * 50)
+        print("-"*50)
 
 if __name__ == "__main__":
     main()

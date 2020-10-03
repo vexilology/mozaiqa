@@ -79,7 +79,7 @@ class Identifier:
             exit(0)
         elif len(alg_name) > 2:
             alg_name.sort()
-            print("~" * 50)
+            print("~"*50)
             print("[?] -> " + str(config.id_algorithms[alg_name[0]]))
             print("[?] -> " + str(config.id_algorithms[alg_name[1]]))
             print("\nLeast Possible:")
@@ -87,6 +87,6 @@ class Identifier:
                 print("[?] " + str(config.id_algorithms[alg_name[a + 2]]))
         else:
             alg_name.sort()
-            print("~" * 50)
+            print("~"*50)
             for a in range(len(alg_name)):
                 print("[?] -> " + str(config.id_algorithms[alg_name[a]]))
