@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-import config
+import time
 import argparse
+import subprocess
+import config
 from src.archive import RipArchive
 from src.foundhash import FoundHash
-from src.identifier import Identifier
 from src.foundbinary import FoundBinary
+from src.identifier import Identifier
 from src.passwordinfo import Passwordinfo
 
 
@@ -19,7 +21,7 @@ def main():
         exit(1)
 
     parser = argparse.ArgumentParser(description=config.title,
-            add_help=False, usage="./mozaiqa.py [-m] [-a] [-s] [-f]")
+            add_help=False, usage="./mozaiqa.py [-test] [-h] [-m] [-a] [-s] [-f] [-i]")
     parser.add_argument("-h", "--help", action="help",
             help="show this help message.")
     parser.add_argument("-m", help="add hash.")
@@ -31,6 +33,7 @@ def main():
             capabilities of bruteforce.")
     parser.add_argument("-f", help="add zip archive name.")
     parser.add_argument("-i", help="quick search by hash size.")
+    parser.add_argument("-test", action="store_true", help="test the program.")
     args = parser.parse_args()
 
     try:
@@ -52,6 +55,11 @@ def main():
         elif args.i:
             finalI = Identifier(args.i)
             finalI.timetofound()
+        elif args.test:
+            subprocess.call("./test_zip.sh", shell=True)
+            time.sleep(10)
+            subprocess.call("./test_hash.sh", shell=True)
+            time.sleep(10)
         else:
             print("Use flags. For more info ./mozaiqa.py -h")
     except KeyboardInterrupt:

@@ -7,10 +7,13 @@
   ===========================
 - Only pure hash, without salt
   ============================
+- Tested on: CPU: Intel i7-6500U (4) @ 2.601GHz
+  =============================================
 
 
-[Install Ubuntu || Debian]
-- ./install.sh
+[First start]
+- ./install.sh (ubuntu || debian)
+- ./mozaiqa.py -test
 --------------
 
  
