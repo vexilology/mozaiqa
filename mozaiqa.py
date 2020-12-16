@@ -56,10 +56,10 @@ def main():
             finalI = Identifier(args.i)
             finalI.timetofound()
         elif args.test:
-            subprocess.call("./test_zip.sh", shell=True)
+            subprocess.call("test/test_zip.sh", shell=True)
             time.sleep(10)
-            subprocess.call("./test_hash.sh", shell=True)
-            time.sleep(10)
+            subprocess.call("test/test_hash.sh", shell=True)
+            time.sleep(5)
         else:
             print("Use flags. For more info ./mozaiqa.py -h")
     except KeyboardInterrupt:
