@@ -28,6 +28,7 @@ def main():
     parser.add_argument("-a", help="md2, md4, md5,\
             sha1, sha224, sha256, sha384, sha512, ripemd160,\
             blake2s-256, blake2b-512, \
+            sha3-224, sha3-256, sha3-384, sha3-512, \
             base32, base64, ascii85.")
     parser.add_argument("-s", help="checking the \
             capabilities of bruteforce.")
@@ -42,6 +43,7 @@ def main():
             finalH.md4()
             finalH.md5()
             finalH.sha_full()
+            finalH.sha3_full()
             finalH.ripemd160()
             finalH.blake2()
             finalB = FoundBinary(myfile, args.a, args.m)

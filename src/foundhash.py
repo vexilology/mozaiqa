@@ -103,6 +103,59 @@ class FoundHash:
                     continue
             return print("[x] Hash not found ---> {}".format(self.addhash))
 
+    def sha3_full(self):
+        if self.myhash == "sha3-224":
+            for password in self.myfile:
+                check_pass = hashlib.sha3_224(password.strip().encode()).hexdigest()
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "sha3-256":
+            for password in self.myfile:
+                check_pass = hashlib.sha3_256(password.strip().encode()).hexdigest()
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "sha3-384":
+            for password in self.myfile:
+                check_pass = hashlib.sha3_384(password.strip().encode()).hexdigest()
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "sha3-512":
+            for password in self.myfile:
+                check_pass = hashlib.sha3_512(password.strip().encode()).hexdigest()
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
     def ripemd160(self):
         if self.myhash == "ripemd160":
             for password in self.myfile:
