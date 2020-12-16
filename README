@@ -46,6 +46,14 @@
 |   - sha256
 |   - sha384
 |   - sha512
+|   - shake128-224
+|   - shake128-256
+|   - shake128-384
+|   - shake128-512
+|   - shake256-224
+|   - shake256-256
+|   - shake256-384
+|   - shake256-512
 |   - sha3-224
 |   - sha3-256
 |   - sha3-384

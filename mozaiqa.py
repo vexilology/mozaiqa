@@ -29,6 +29,8 @@ def main():
             sha1, sha224, sha256, sha384, sha512, ripemd160,\
             blake2s-256, blake2b-512, \
             sha3-224, sha3-256, sha3-384, sha3-512, \
+            shake128-224, shake128-256, shake128-384, shake128-512, \
+            shake256-224, shake256-256, shake256-384, shake256-512, \
             base32, base64, ascii85.")
     parser.add_argument("-s", help="checking the \
             capabilities of bruteforce.")
@@ -42,6 +44,8 @@ def main():
             finalH = FoundHash(myfile, args.a, args.m)
             finalH.md4()
             finalH.md5()
+            finalH.shake128_full()
+            finalH.shake256_full()
             finalH.sha_full()
             finalH.sha3_full()
             finalH.ripemd160()

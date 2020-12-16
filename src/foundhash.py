@@ -37,6 +37,112 @@ class FoundHash:
                     continue
             return print("[x] Hash not found ---> {}".format(self.addhash))
 
+    def shake128_full(self):
+        if self.myhash == "shake128-224":
+            for password in self.myfile:
+                check_pass = hashlib.shake_128(password.strip().encode()).hexdigest(28)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake128-256":
+            for password in self.myfile:
+                check_pass = hashlib.shake_128(password.strip().encode()).hexdigest(32)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake128-384":
+            for password in self.myfile:
+                check_pass = hashlib.shake_128(password.strip().encode()).hexdigest(48)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake128-512":
+            for password in self.myfile:
+                check_pass = hashlib.shake_128(password.strip().encode()).hexdigest(64)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+    def shake256_full(self):
+        if self.myhash == "shake256-224":
+            for password in self.myfile:
+                check_pass = hashlib.shake_256(password.strip().encode()).hexdigest(28)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake256-256":
+            for password in self.myfile:
+                check_pass = hashlib.shake_256(password.strip().encode()).hexdigest(32)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake256-384":
+            for password in self.myfile:
+                check_pass = hashlib.shake_256(password.strip().encode()).hexdigest(48)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
+        elif self.myhash == "shake256-512":
+            for password in self.myfile:
+                check_pass = hashlib.shake_256(password.strip().encode()).hexdigest(64)
+                print("[?] Password ---> {}".format(password.strip()))
+                if check_pass == self.addhash:
+                    print("-"*20)
+                    print("\n[!] Password found ---> {}".format(password))
+                    print("-"*20)
+                    exit(0)
+                else:
+                    continue
+            return print("[x] Hash not found ---> {}".format(self.addhash))
+
     def sha_full(self):
         if self.myhash == "sha1":
             for password in self.myfile:
