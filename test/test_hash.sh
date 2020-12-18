@@ -88,4 +88,5 @@ test_sha512=`readJson hash_examples.json sha512` || exit 1;
 ./mozaiqa.py -m $test_sha512 -a sha512
 echo ""
 echo "SHA512 :: TEST PASSED..."
-echo "Exit, waiting 5s"
+echo "Waiting 5s"
+echo ""
