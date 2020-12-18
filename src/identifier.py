@@ -1,13 +1,13 @@
 import json
-import config
 
 
-# TODO: Create id_algorithms.json
 try:
-    with open("hash_examples.json") as h_exm:
-        parse_hash = json.load(h_exm)
+    with open("hash_examples.json") as hash_exmp, open(
+              "id_algorithms.json") as id_alg:
+        parse_hash = json.load(hash_exmp)
+        parse_id = json.load(id_alg)
 except:
-    print("Cant open json.")
+    print("Can't open json.")
     exit(1)
 
 class Identifier:
@@ -178,14 +178,14 @@ class Identifier:
             exit(0)
         elif len(a_name) > 4:
             a_name.sort()
-            print("[?] :: " + str(config.id_algorithms[a_name[0]]))
-            print("[?] :: " + str(config.id_algorithms[a_name[1]]))
-            print("[?] :: " + str(config.id_algorithms[a_name[2]]))
-            print("[?] :: " + str(config.id_algorithms[a_name[3]]))
+            print("[?] :: " + str(parse_id[a_name[0]]))
+            print("[?] :: " + str(parse_id[a_name[1]]))
+            print("[?] :: " + str(parse_id[a_name[2]]))
+            print("[?] :: " + str(parse_id[a_name[3]]))
             print("Least Possible:")
             for a in range(int(len(a_name))-4):
-                print("[?] :: " + str(config.id_algorithms[a_name[a+4]]))
+                print("[?] :: " + str(parse_id[a_name[a+4]]))
         else:
             a_name.sort()
             for a in range(len(a_name)):
-                print("[?] :: " + str(config.id_algorithms[a_name[a]]))
+                print("[?] :: " + str(parse_id[a_name[a]]))
