@@ -1,0 +1,3 @@
+[submodule "hashgosum"]
+	path = hashgosum
+	url = https://github.com/vexilology/hashgosum
