@@ -1,33 +1,34 @@
-[Mozaiqa]
-- Script in process. Only draft
-  =============================
-- More info ---> https://github.com/danielmiessler/SecLists/tree/master/Passwords
-- rockyou.txt - popular list passwords
-- Python script and it's slow
-  ===========================
-- Only pure hash, without salt
-  ============================
-- Tested on: CPU: Intel i7-6500U (4) @ 2.601GHz
-  =============================================
+Mozaiqa:
+========
+Script in process. Only draft
+More info ---> https://github.com/danielmiessler/SecLists/tree/master/Passwords
+rockyou.txt - popular list passwords
+Python script and it's slow
+Only pure hash, without salt
+Tested on: CPU: Intel i7-6500U (4) @ 2.601GHz
 
+What i use:
+===========
+GNU bash, version 5.0.17(1)-release (x86_64-pc-linux-gnu)
+Python 3.8.5
+go version go1.15.2 linux/amd64  -- !Check submodule:
+                                    For quick hash finding
+                                    At the moment does not apply to the program
 
-[First start]
-- ./install.sh (ubuntu || debian)
-- ./mozaiqa.py -test
---------------
+First start:
+============
+./install.sh
+./mozaiqa.py -test
 
  
-[Examples and other]
-- ./mozaiqa.py -h
--------------------------
-- ./mozaiqa.py -s helloworld
--------------------------
-- ./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
--------------------------
-- ./mozaiqa.py -f archive.zip
--------------------------
-- ./mozaiqa.py -i 6adfb183a4a2c94a2f92dab5ade762a47889a5a1
--------------------------
+Examples:
+=========
+./mozaiqa.py -h
+./mozaiqa.py -s helloworld
+./mozaiqa.py -m aGVsbG8gd29ybGQ= -a base64
+./mozaiqa.py -f archive.zip
+./mozaiqa.py -i 6adfb183a4a2c94a2f92dab5ade762a47889a5a1
+---------
 -h [help]
 -m [hash]
 -a [algorithm]
@@ -68,8 +69,9 @@
 |   - ascii85
 +---------------------------------------
 
-[Errors]
-- Ascii85 error:
+Errors:
+=======
+Ascii85 error:
   If you have  `-bash: syntax error ...`. Use: ""
   Example: ./mozaiqa.py -m "H=UH)Dg#PS0etNb" -a ascii85
   -----------------------------------------------------
