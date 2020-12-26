@@ -2,6 +2,7 @@ import math
 import string
 import config
 
+
 class Passwordinfo:
     def __init__(self, s):
         self.a = s
@@ -59,21 +60,25 @@ class Passwordinfo:
                 complexity += 10
                 has_outwards_num = False
             if complexity == 0: complexity = 1
+
             combinations = complexity ** length
+
             if has_outwards_num:
                 combinations *= 10
             if has_outwards_upper:
                 combinations *= 26
             if has_outwards_sym:
                 combinations *= 38
+
             return combinations
 
-        def load_dict(book_path):
+        def load_dict(_bookPath):
             try:
-                with open(config.book_path) as f:
+                _bookPath = config._list[2]
+                with open(_bookPath) as f:
                     return f.readlines()
             except FileNotFoundError as f:
-                print(config.red, "-"*50)
+                print("-"*50)
                 print("Error path: this flag only for linux.")
                 print("-"*50)
                 exit(0)

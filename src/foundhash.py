@@ -1,6 +1,6 @@
-import config
 import hashlib
 from hashlib import blake2s, blake2b
+
 
 class FoundHash:
     def __init__(self, myfile, a, m):

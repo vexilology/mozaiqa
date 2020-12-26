@@ -1,5 +1,6 @@
 import base64
 
+
 class FoundBinary:
     def __init__(self, myfile, a, m):
         self.myfile = myfile

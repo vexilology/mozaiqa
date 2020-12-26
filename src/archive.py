@@ -1,5 +1,6 @@
 from zipfile import ZipFile
 
+
 class RipArchive:
     def __init__(self, myfile, f):
         self.myfile = myfile

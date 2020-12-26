@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-import time
-import argparse
-import subprocess
 import config
+import argparse
+
 from src.archive import RipArchive
 from src.foundhash import FoundHash
 from src.foundbinary import FoundBinary
@@ -11,29 +10,13 @@ from src.passwordinfo import Passwordinfo
 
 
 def main():
-    try:
-        myfile = open("rockyou.txt", "r",
-            encoding="utf-8", errors="ignore")
-    except FileNotFoundError:
-        print(config.red, "-"*50)
-        print("Error: txt file not found, check folder.")
-        print("-"*50)
-        exit(1)
-
-    parser = argparse.ArgumentParser(description=config.title,
-            add_help=False, usage="./mozaiqa.py [-test] [-h] [-m] [-a] [-s] [-f] [-i]")
+    parser = argparse.ArgumentParser(description=config._list[0],
+            add_help=False, usage=config._list[1])
     parser.add_argument("-h", "--help", action="help",
             help="show this help message.")
     parser.add_argument("-m", help="add hash.")
-    parser.add_argument("-a", help="md2, md4, md5,\
-            sha1, sha224, sha256, sha384, sha512, ripemd160,\
-            blake2s-256, blake2b-512, \
-            sha3-224, sha3-256, sha3-384, sha3-512, \
-            shake128-224, shake128-256, shake128-384, shake128-512, \
-            shake256-224, shake256-256, shake256-384, shake256-512, \
-            base32, base64, ascii85.")
-    parser.add_argument("-s", help="checking the \
-            capabilities of bruteforce.")
+    parser.add_argument("-a", help=config._list[3])
+    parser.add_argument("-s", help="checking the capabilities of bruteforce.")
     parser.add_argument("-f", help="add zip archive name.")
     parser.add_argument("-i", help="quick search by hash size.")
     parser.add_argument("-test", action="store_true", help="test the program.")
@@ -41,7 +24,7 @@ def main():
 
     try:
         if args.m and args.a:
-            finalH = FoundHash(myfile, args.a, args.m)
+            finalH = FoundHash(config.__open(), args.a, args.m)
             finalH.md4()
             finalH.md5()
             finalH.shake128_full()
@@ -50,10 +33,10 @@ def main():
             finalH.sha3_full()
             finalH.ripemd160()
             finalH.blake2()
-            finalB = FoundBinary(myfile, args.a, args.m)
+            finalB = FoundBinary(config.__open(), args.a, args.m)
             finalB.base32_64()
         elif args.f:
-            finalF = RipArchive(myfile, args.f)
+            finalF = RipArchive(config.__open(), args.f)
             finalF.checkzip()
         elif args.s:
             finalS = Passwordinfo(args.s)
@@ -62,17 +45,21 @@ def main():
             finalI = Identifier(args.i)
             finalI.timetofound()
         elif args.test:
+            import time
+            import subprocess
+            start = time.time()
             subprocess.call("test/test_zip.sh", shell=True)
-            time.sleep(10)
+            time.sleep(5)
             subprocess.call("test/test_hash.sh", shell=True)
-            time.sleep(10)
+            time.sleep(5)
             subprocess.call("test/test_binary.sh", shell=True)
             time.sleep(5)
+            print("Completed in {0}".format(time.time()-start))
         else:
-            print("Use flags. For more info ./mozaiqa.py -h")
+            print("Unknown flag.")
     except KeyboardInterrupt:
-        print(config.green, "-"*50)
-        print("Program stopped with Ctrl+C.")
+        print("-"*50)
+        print("Program stopped.")
         print("-"*50)
 
 if __name__ == "__main__":

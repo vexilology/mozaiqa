@@ -11,5 +11,5 @@ rm hackme.zip
 rm abs.txt
 echo ""
 echo "ZIP :: TEST PASSED..."
-echo "Waiting 10s"
+echo "Waiting 5s"
 echo ""
